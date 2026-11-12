@@ -1,0 +1,36 @@
+.wrapper {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+}
+
+.wrapper > * {
+  padding: 20px;
+  background: lightblue;
+  border: 1px solid steelblue;
+  border-radius: 5px;
+}
+
+header { grid-area: header; }
+nav { grid-area: nav; }
+article { grid-area: content; }
+aside { grid-area: sidebar; }
+.ad { grid-area: ad; }
+footer { grid-area: footer; }
+
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "content sidebar"
+      "footer ad";
+  }
+}
